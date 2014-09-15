@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Luck</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="en" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<script src="../js/event.js" type="text/javascript"></script>
+	<script src="../js/lottery.js" type="text/javascript"></script>
+	<style type="text/css">
+		#container {
+			width: 328px;
+			height: 328px;
+			background:url(../img/bg.jpg) no-repeat 50% 50%;width:328px;height:328px;
+			position: relative;
+			top: 200px;
+			left: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+	</div
+
+</body>
+<script type="text/javascript">
+	var lottery = new Lottery('container',8,0);  //容器id、奖品个数、第1个奖品指针的角度/360
+
+	lottery.on('click',function () {
+		lottery.resultOn(Math.floor(Math.random()*8)); //顺时针方向第几个
+	})
+	lottery.on('resultEnd',function (num) {
+		alert('抽中了第'+num+'个');
+	})
+</script>
+</html>
